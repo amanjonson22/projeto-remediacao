@@ -1,0 +1,14 @@
+/.env
+/Dockerfile
+/__pycache__
+/apikey.json
+/blocked_actions.py
+/buckets.json
+/certs
+/data.json
+/iamtoken.py
+/ibm.py
+/log1.json
+/log2.json
+/log3.json
+/main.py
