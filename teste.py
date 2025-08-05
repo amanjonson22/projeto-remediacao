@@ -78,12 +78,11 @@ async def consume_loop():
         finally:
             await consumer.stop()
 
-async def main():
-    await get_iam_token()  
-   
-    asyncio.create_task(renew_token_loop())
-    
-    await consume_loop()
+def main(params):
+    asyncio.run(handler(params))
+    return {"status": "consumer started"}
 
-if __name__ == "__main__":
-    asyncio.run(main())
+async def handler(params):
+    await get_iam_token()
+    asyncio.create_task(renew_token_loop())
+    await consume_loop()
