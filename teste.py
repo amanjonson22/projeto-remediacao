@@ -79,7 +79,7 @@ async def consume_loop():
             await consumer.stop()
 
 def main(params):
-    asyncio.run(handler(params))
+    asyncio.run(asyncio.wait_for(handler(params), timeout=120))
     return {"status": "consumer started"}
 
 async def handler(params):
